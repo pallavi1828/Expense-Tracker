@@ -1,0 +1,173 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('https://t3.ftcdn.net/jpg/02/48/53/50/360_F_248535001_gRS1zkckhNtJivVX5EeUUtKSNTS7Vhy2.jpg');
+    background-size: cover; /* Ensures image covers the entire background */
+    background-position: center;
+    color: #333;
+    min-height: 100vh;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Expense Tracker Container */
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white for contrast */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    background-image: linear-gradient(135deg, #e4f3d1 10%, #d0e9b1 100%); /* Paper-like effect */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for notepad-like feel */
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Increase the font size of the title and add dollar symbols */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 60px; /* Larger font size */
+    color: #4d6a35; /* Dark green title */
+    font-weight: bold;
+    position: relative;
+}
+
+/* Dollar symbols around the title */
+h1::before {
+    content: " "; /* Dollar symbols before the title */
+    font-size: 40px;
+    position: absolute;
+    left: -100px; /* Adjust based on your preference */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6a9f4f;
+}
+
+h1::after {
+    content: "  "; /* Dollar symbols after the title */
+    font-size: 40px;
+    position: absolute;
+    right: -100px; /* Adjust based on your preference */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6a9f4f;
+}
+
+/* 🎨 Stylish Input Boxes */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+form input {
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: #f1f9e7; /* Soft light green */
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.05),
+                inset -2px -2px 5px rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+form input:focus {
+    background: #fff;
+    border-image: linear-gradient(90deg, #7bbf7a, #4c9f4b); /* Darker green gradient on focus */
+    border-image-slice: 1;
+    box-shadow: 0 0 10px rgba(0, 121, 96, 0.4);
+}
+
+form input::placeholder {
+    color: #748d56; /* Lighter green placeholder */
+    font-style: italic;
+}
+
+/* Submit Button */
+form button {
+    padding: 12px;
+    background-color: #6f9f4d; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 140, 186, 0.3);
+}
+
+form button:hover {
+    background-color: #4f7e39;
+    transform: translateY(-2px);
+}
+
+/* Buttons Below Form */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.buttons button {
+    padding: 12px;
+    background-color: #6f9f4d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 140, 186, 0.3);
+}
+
+.buttons button:hover {
+    background-color: #4f7e39;
+    transform: translateY(-2px);
+}
+
+/* Output Box */
+#output {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #6f9f4d;
+    border-radius: 8px;
+    font-size: 15px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    form input,
+    form button,
+    .buttons button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+}

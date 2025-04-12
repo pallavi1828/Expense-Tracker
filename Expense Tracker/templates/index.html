@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+
+        <form id="expenseForm">
+            <input type="number" id="amount" placeholder="Amount" required>
+            <input type="text" id="category" placeholder="Category" required>
+            <input type="text" id="description" placeholder="Description" required>
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <div class="buttons">
+            <button onclick="fetchExpenses()">View Expenses</button>
+            <button onclick="fetchMonthlySummary()">Monthly Summary</button>
+            <button onclick="fetchCategorySummary()">Category Summary</button>
+        </div>
+
+        <div id="output"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
